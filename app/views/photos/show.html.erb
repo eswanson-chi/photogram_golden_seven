@@ -1,7 +1,17 @@
-<h1>Photo #<%= @photo.id %> </h1>
+<div class="container">
+  <div class="row">
+    <p></p>
+    <div class="col-md-10 col-md-offset-1 hidden-xs hidden-sm">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Photo #<%= @photo.id %> </h1>
+        </div>
 
-<div>
-  <img src="<%= @photo.source %>" width="500">
-  <p><%= @photo.caption %></p>
-  <p><a href="http://localhost:3000/photos">Back to Index</a></p>
+        <ul class="list-group">
+          <li class="list-group-item"><div class="well well-sm"><img src="<%= @photo.source %>" class="img-responsive"></div></li>
+          <li class="list-group-item"><p><%= @photo.caption %></p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

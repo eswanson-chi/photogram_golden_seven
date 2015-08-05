@@ -1,11 +1,27 @@
-<h1>Update a Photo</h1>
+<div class="container">
+  <div class="row">
+    <p></p>
+    <div class="col-md-6 col-md-offset-3 hidden-xs hidden-sm">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Update Photo #<%= @photo.id %> </h1>
+        </div>
 
-<div>
-<form action="http://localhost:3000/photos/<%= @photo.id %>/update_photo">
-  Caption:
-  <input name="update_caption" type="text" value="<%= @photo.caption %>">
-  Source:
-  <input name="update_source" type="text" value="<%= @photo.source %>">
-  <button>Update Photo</button>
-</form>
+        <ul class="list-group">
+          <li class="list-group-item"><div class="well well-sm"><img src="<%= @photo.source %>" class="img-responsive"></div></li>
+          <li class="list-group-item"></li>
+          <div>
+            <form action="http://localhost:3000/photos/<%= @photo.id %>/update_photo">
+              <li class="list-group-item">Caption:
+              <input name="update_caption" type="text" value="<%= @photo.caption %>"></li>
+              <li class="list-group-item">Source:
+              <input name="update_source" type="text" value="<%= @photo.source %>"></li>
+              <li class="list-group-item"><button class="btn btn-warning btn-block btn-lg" >Update Photo</button></li>
+            </form>
+          </div>
+
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

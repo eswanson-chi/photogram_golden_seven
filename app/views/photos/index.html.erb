@@ -1,30 +1,33 @@
-<h1>List of Photos</h1>
+ <% @list_of_photos.each do |photo| %>
+<div class="container">
+  <div class="row">
+    <p></p>
+    <div class="col-md-8 col-md-offset-2 hidden-xs hidden-sm">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title"><%= photo.caption %></h1>
+        </div>
 
-<a href="http://localhost:3000/photos/new">Add a New Photo</a>
+        <ul class="list-group">
+          <li class="list-group-item"><div class="well well-sm"><img src="<%= photo.source %>" class="img-responsive"></div></li>
+          <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-2">
+                    <a href="http://localhost:3000/photos/<%= photo.id %>/show" class="btn btn-primary btn-block btn-lg" ><i class="fa fa-search-plus"></i></a>
+                  </div>
 
-<table>
-  <tr>
-    <th>Thumbnail</th>
-    <th>Caption</th>
-    <th colspan="3">Actions</th>
-  </tr>
-  <% @list_of_photos.each do |photo| %>
-  <tr>
-    <td>
-      <img src="<%= photo.source %>" width="80">
-    </td>
-    <td>
-      <%= photo.caption %>
-    </td>
-    <td>
-      <a href="http://localhost:3000/photos/<%= photo.id %>/show">Show</a>
-    </td>
-    <td>
-      <a href="http://localhost:3000/photos/<%= photo.id %>/edit">Edit</a>
-    </td>
-    <td>
-      <a href="http://localhost:3000/photos/delete_photo/<%= photo.id %>">Delete</a>
-    </td>
-  </tr>
-  <% end %>
-</table>
+                  <div class="col-md-2">
+                    <a href="http://localhost:3000/photos/<%= photo.id %>/edit" class="btn btn-warning btn-block btn-lg" ><i class="fa fa-pencil"></i></a>
+                  </div>
+
+                  <div class="col-md-2">
+                    <a href="http://localhost:3000/photos/delete_photo/<%= photo.id %>" class="btn btn-danger btn-block btn-lg" ><i class="fa fa-trash"></i></a>
+                  </div>
+                </div>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ <% end %>
